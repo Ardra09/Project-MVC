@@ -1,0 +1,93 @@
+﻿@model Project_mvcasp.Models.CompVacancy
+@{
+    ViewBag.Title = "CompVacancy_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Company Vacancy</h2>
+<div>
+    @using (Html.BeginForm("CompanyVacancy", "CompVacancy", FormMethod.Post))
+    {
+        @*<div>
+            <label>Company Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cid)
+            @Html.ValidationMessageFor(m => m.cid)
+        </div>*@
+        <div>
+            <label>Job Title:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.jtitle)
+            @Html.ValidationMessageFor(m => m.jtitle)
+        </div>
+        <div>
+            <label>Job Description:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.jdesc)
+            @Html.ValidationMessageFor(m => m.jdesc)
+        </div>
+        <div>
+            <label>Skills:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.skills)
+        </div>
+        <div>
+            <label>Experience:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.exp)
+        </div>
+        <div>
+            <label>Location:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.loc)
+        </div>
+        <div>
+            <label>Salary Range:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.srange)
+        </div>
+        <div>
+            <label>Job Type:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.jtype)
+        </div>
+        <div>
+            <label>Posted Date:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.postdate)
+        </div>
+        <div>
+            <label>Last Date:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.lastdate)
+        </div>
+        <div>
+            <label>Status:</label>
+        </div>
+
+        <div>
+            @Html.TextBoxFor(m => m.status)
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.jmsg)
+        </div>
+    }
+</div>
+

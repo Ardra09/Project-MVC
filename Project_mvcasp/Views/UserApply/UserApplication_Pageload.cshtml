@@ -1,0 +1,35 @@
+﻿@model Project_mvcasp.Models.UserApplication
+@{
+    ViewBag.Title = "UserApplication_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Application</h2>
+<div>
+    @using (Html.BeginForm("SubmitUserApplication", "UserApply", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            <label>Application Date</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.applndate)
+            @Html.ValidationMessageFor(m => m.applndate)
+        </div>
+        <div>
+            <label>Resume</label>
+        </div>
+        <div>
+            @Html.TextBox("file", "", new { Type = "file" })
+        </div>
+        <input type="hidden" name="jid" value="@Request.QueryString["jid"]" />
+        <div>
+            <input type="submit" value="Apply" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>
+
+<div class="back-to-home">
+    @Html.ActionLink("Back to Home Page", "searchjob_Pageload", "SearchJob")
+</div>
+
